@@ -1,6 +1,6 @@
 ## README-vertaling
 
-**Talen:**[Engels](README.md)\|[Vereenvoudigd Chinees](README.zh-CN.md)\|[Traditioneel Chinees](README.zh-TW.md)\|[Hindi](README.hi.md)\|[Arabisch](README.ar.md) \| [Frans](README.fr.md)\|[Spaans](README.es.md)\|[Duits](README.de.md)\|[Japanse](README.ja.md)\|[Portugees](README.pt.md)\|[Russisch](README.ru.md)\|[Italiaans](README.it.md)\|[Koreaans](README.ko.md)\|[Turks](README.tr.md)\|[Nederlands](README.nl.md)\|[Thais](README.th.md)\|[Vietnamees](README.vi.md)\|[Pools](README.pl.md)\|[Oekraïens](README.uk.md)\|[Grieks](README.el.md)
+**Talen:** [English](README.md) | [简体中文](README.zh-CN.md) | [繁體中文](README.zh-TW.md) | [हिन्दी](README.hi.md) | [العربية](README.ar.md) | [Français](README.fr.md) | [Español](README.es.md) | [Deutsch](README.de.md) | [日本語](README.ja.md) | [Português](README.pt.md) | [Русский](README.ru.md) | [Italiano](README.it.md) | [한국어](README.ko.md) | [Türkçe](README.tr.md) | [Nederlands](README.nl.md) | [ไทย](README.th.md) | [Tiếng Việt](README.vi.md) | [Polski](README.pl.md) | [Українська](README.uk.md) | [Ελληνικά](README.el.md)
 
 # ChatID-helperbot
 
@@ -26,22 +26,25 @@ Haal moeiteloos chat-ID's op met gemak! Deze Telegram-bot, gebouwd op Cloudflare
 2.  Download de broncode van de bot.
 3.  Loop`npm run deploy`lokaal om uw werknemer in te zetten.
 
-### Step 3: Configure Required Environment Variables
+### Stap 3: Configureer de vereiste omgevingsvariabelen
 
-Om de bot succesvol te laten werken, moeten twee omgevingsvariabelen worden ingesteld:
+Om de bot succesvol te laten werken, moeten drie omgevingsvariabelen worden ingesteld:
 
 -   **BOT_TOKEN**
--   **Ik heb je dronken gemaakt**
+-   **BOT_SECRET_TOKEN**
+-   **BOT_LANGUAGE**
 
 Raadpleeg de Cloudflare Workers-documentatie voor[omgevingsvariabelen toevoegen](https://developers.cloudflare.com/workers/configuration/environment-variables/#add-environment-variables-via-the-dashboard).
 
 #### Details:
 
 1.  **BOT_TOKEN**: Kopieer en plak het token dat is ontvangen van**@BotFather**in deze variabele.
-2.  **Ik heb je dronken gemaakt**: Dit is een waarde die u zelf definieert. Het moet aan de volgende criteria voldoen:
+2.  **BOT_SECRET_TOKEN**: Dit is een waarde die u zelf definieert. Het moet aan de volgende criteria voldoen:
     -   1-256 tekens lang.
     -   Toegestane tekens:`A-Z`,`a-z`,`0-9`,`_`, En`-`.
     -   Dit garandeert de veiligheid van de bot.
+3.  **BOT_LANGUAGE**: optionele taalmodus. Gebruik `auto` om te detecteren op basis van de gebruikerstaal en tekens in naam/titel, of forceer een ondersteunde code zoals `zh`, `en`, `ja`, `ko`, `es`, `de`, `fr`, `ru`, `ar`, `fa`, `uk`, `vi`, `tr`, `pt`, `it`, `nl`, `id` of `ms`.
+
 
 ### Stap 4: Stel de webhook-URL in
 

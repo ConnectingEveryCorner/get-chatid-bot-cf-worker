@@ -1,6 +1,6 @@
 ## اقرأني الترجمة
 
-**اللغات:**[إنجليزي](README.md)\|[الصينية المبسطة](README.zh-CN.md)\|[الصينية التقليدية](README.zh-TW.md)\|[الهندية](README.hi.md)\|[عربى](README.ar.md)\|[فرنسي](README.fr.md)\|[الأسبانية](README.es.md)\|[الألمانية](README.de.md)\|[اليابانية](README.ja.md)\|[البرتغالية](README.pt.md)\|[الروسية](README.ru.md)\|[ايطالي](README.it.md)\|[كوري](README.ko.md)\|[تركي](README.tr.md)\|[هولندي](README.nl.md)\|[التايلاندية](README.th.md)\|[الفيتنامية](README.vi.md)\|[بولندي](README.pl.md)\|[الأوكرانية](README.uk.md)\|[اليونانية](README.el.md)
+**اللغات:** [English](README.md) | [简体中文](README.zh-CN.md) | [繁體中文](README.zh-TW.md) | [हिन्दी](README.hi.md) | [العربية](README.ar.md) | [Français](README.fr.md) | [Español](README.es.md) | [Deutsch](README.de.md) | [日本語](README.ja.md) | [Português](README.pt.md) | [Русский](README.ru.md) | [Italiano](README.it.md) | [한국어](README.ko.md) | [Türkçe](README.tr.md) | [Nederlands](README.nl.md) | [ไทย](README.th.md) | [Tiếng Việt](README.vi.md) | [Polski](README.pl.md) | [Українська](README.uk.md) | [Ελληνικά](README.el.md)
 
 # روبوت مساعد ChatID
 
@@ -28,10 +28,11 @@
 
 ### الخطوة 3: تكوين متغيرات البيئة المطلوبة
 
-لتشغيل الروبوت بنجاح، يجب تعيين متغيرين للبيئة:
+لتشغيل الروبوت بنجاح، يجب تعيين ثلاثة متغيرات للبيئة:
 
 -   **BOT_TOKEN**
 -   **BOT_SECRET_TOKEN**
+-   **BOT_LANGUAGE**
 
 راجع وثائق Cloudflare Workers لـ[إضافة متغيرات البيئة](https://developers.cloudflare.com/workers/configuration/environment-variables/#add-environment-variables-via-the-dashboard).
 
@@ -42,6 +43,8 @@
     -   1-256 حرفا في الطول.
     -   الأحرف المسموح بها:`A-Z`,`a-z`,`0-9`,`_`، و`-`.
     -   وهذا يضمن أمن الروبوت.
+3.  **BOT_LANGUAGE**: وضع اللغة اختياري. استخدم `auto` للكشف من لغة المستخدم وأحرف الاسم/العنوان، أو عيّن رمزًا مدعومًا مثل `zh` أو `en` أو `ja` أو `ko` أو `es` أو `de` أو `fr` أو `ru` أو `ar` أو `fa` أو `uk` أو `vi` أو `tr` أو `pt` أو `it` أو `nl` أو `id` أو `ms`.
+
 
 ### الخطوة 4: قم بتعيين عنوان URL للويب هوك
 

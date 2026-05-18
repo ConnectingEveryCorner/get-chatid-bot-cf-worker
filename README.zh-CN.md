@@ -1,6 +1,6 @@
 ## 自述文件翻译
 
-**语言：**[英语](README.md)\|[简体中文](README.zh-CN.md)\|[繁体中文](README.zh-TW.md)\|[印地语](README.hi.md)\|[阿拉伯](README.ar.md)\|[法语](README.fr.md)\|[西班牙语](README.es.md)\|[德语](README.de.md)\|[日本人](README.ja.md)\|[葡萄牙语](README.pt.md)\|[俄语](README.ru.md)\|[意大利语](README.it.md)\|[韩国人](README.ko.md)\|[土耳其](README.tr.md)\|[荷兰语](README.nl.md)\|[泰国](README.th.md)\|[越南语](README.vi.md)\|[抛光](README.pl.md)\|[乌克兰](README.uk.md)\|[希腊语](README.el.md)
+**语言:** [English](README.md) | [简体中文](README.zh-CN.md) | [繁體中文](README.zh-TW.md) | [हिन्दी](README.hi.md) | [العربية](README.ar.md) | [Français](README.fr.md) | [Español](README.es.md) | [Deutsch](README.de.md) | [日本語](README.ja.md) | [Português](README.pt.md) | [Русский](README.ru.md) | [Italiano](README.it.md) | [한국어](README.ko.md) | [Türkçe](README.tr.md) | [Nederlands](README.nl.md) | [ไทย](README.th.md) | [Tiếng Việt](README.vi.md) | [Polski](README.pl.md) | [Українська](README.uk.md) | [Ελληνικά](README.el.md)
 
 # ChatID 助手机器人
 
@@ -28,20 +28,22 @@
 
 ### 步骤3：配置所需的环境变量
 
-要成功运行机器人，必须设置两个环境变量：
+要成功运行机器人，必须设置三个环境变量：
 
 -   **BOT_TOKEN**
--   **我让你醉了**
+-   **BOT_SECRET_TOKEN**
+-   **BOT_LANGUAGE**
 
 请参阅 Cloudflare Workers 文档了解[添加环境变量](https://developers.cloudflare.com/workers/configuration/environment-variables/#add-environment-variables-via-the-dashboard).
 
 #### 细节：
 
 1.  **BOT_TOKEN**：复制并粘贴从接收到的令牌**@BotFather**到这个变量中。
-2.  **我让你醉了**：这是您自己定义的值。它必须满足以下标准：
+2.  **BOT_SECRET_TOKEN**：这是您自己定义的值。它必须满足以下标准：
     -   长度为 1-256 个字符。
     -   允许的字符：`A-Z`,`a-z`,`0-9`,`_`， 和`-`.
     -   这确保了机器人的安全。
+3.  **BOT_LANGUAGE**：可选语言模式。使用 `auto` 会根据用户语言和昵称/标题字符自动判断，也可以强制指定支持的语言代码，例如 `zh`、`en`、`ja`、`ko`、`es`、`de`、`fr`、`ru`、`ar`、`fa`、`uk`、`vi`、`tr`、`pt`、`it`、`nl`、`id` 或 `ms`。
 
 ### 第 4 步：设置 Webhook URL
 

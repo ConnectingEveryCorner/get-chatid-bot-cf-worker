@@ -1,12 +1,12 @@
 ## README-Übersetzung
 
-**Sprachen:**[Englisch](README.md)\|[Vereinfachtes Chinesisch](README.zh-CN.md)\|[Traditionelles Chinesisch](README.zh-TW.md)\|[Hindi](README.hi.md)\|[Araber](README.ar.md)\|[Französisch](README.fr.md)\|[Spanisch](README.es.md)\|[Deutsch](README.de.md)\|[japanisch](README.ja.md)\|[Portugiesisch](README.pt.md)\|[Russisch](README.ru.md)\|[Italienisch](README.it.md)\|[Koreanisch](README.ko.md)\|[Türkisch](README.tr.md)\|[Niederländisch](README.nl.md)\|[Thailändisch](README.th.md)\|[Vietnamesisch](README.vi.md)\|[Polieren](README.pl.md)\|[ukrainisch](README.uk.md)\|[griechisch](README.el.md)
+**Sprachen:** [English](README.md) | [简体中文](README.zh-CN.md) | [繁體中文](README.zh-TW.md) | [हिन्दी](README.hi.md) | [العربية](README.ar.md) | [Français](README.fr.md) | [Español](README.es.md) | [Deutsch](README.de.md) | [日本語](README.ja.md) | [Português](README.pt.md) | [Русский](README.ru.md) | [Italiano](README.it.md) | [한국어](README.ko.md) | [Türkçe](README.tr.md) | [Nederlands](README.nl.md) | [ไทย](README.th.md) | [Tiếng Việt](README.vi.md) | [Polski](README.pl.md) | [Українська](README.uk.md) | [Ελληνικά](README.el.md)
 
 # ChatID Helper Bot
 
 Rufen Sie Chat-IDs mühelos und bequem ab! Dieser auf Cloudflare Workers basierende Telegram-Bot erfordert keine Serverbereitstellung.
 
-**Example Bot**:[ChatIDHelperBot](https://t.me/ChatIDHelperBot)
+**Beispiel-Bot**:[ChatIDHelperBot](https://t.me/ChatIDHelperBot)
 
 ![screenshot](https://raw.githubusercontent.com/CECEthanClarke/get-chatid-bot-cf-worker/refs/heads/main/other/screenshot.jpg)
 
@@ -28,10 +28,11 @@ Rufen Sie Chat-IDs mühelos und bequem ab! Dieser auf Cloudflare Workers basiere
 
 ### Schritt 3: Erforderliche Umgebungsvariablen konfigurieren
 
-Um den Bot erfolgreich auszuführen, müssen zwei Umgebungsvariablen festgelegt werden:
+Um den Bot erfolgreich auszuführen, müssen drei Umgebungsvariablen festgelegt werden:
 
 -   **BOT_TOKEN**
 -   **BOT_SECRET_TOKEN**
+-   **BOT_LANGUAGE**
 
 Weitere Informationen finden Sie in der Cloudflare Workers-Dokumentation[Umgebungsvariablen hinzufügen](https://developers.cloudflare.com/workers/configuration/environment-variables/#add-environment-variables-via-the-dashboard).
 
@@ -42,6 +43,7 @@ Weitere Informationen finden Sie in der Cloudflare Workers-Dokumentation[Umgebun
     -   1-256 Zeichen lang.
     -   Erlaubte Zeichen:`A-Z`,`a-z`,`0-9`,`_`, Und`-`.
     -   Dies gewährleistet die Sicherheit des Bots.
+3.  **BOT_LANGUAGE**: Optionaler Sprachmodus. Verwenden Sie `auto`, um anhand der Benutzersprache und der Zeichen im Namen/Titel zu erkennen, oder erzwingen Sie einen unterstützten Code wie `zh`, `en`, `ja`, `ko`, `es`, `de`, `fr`, `ru`, `ar`, `fa`, `uk`, `vi`, `tr`, `pt`, `it`, `nl`, `id` oder `ms`.
 
 ### Schritt 4: Legen Sie die Webhook-URL fest
 

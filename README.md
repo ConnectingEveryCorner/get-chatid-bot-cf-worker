@@ -1,5 +1,5 @@
 ## README Translation
-**Languages:** [English](README.md) | [简体中文](README.zh-CN.md) | [繁体中文](README.zh-TW.md) | [हिंदी](README.hi.md) | [عربى](README.ar.md) | [Française](README.fr.md) | [Español](README.es.md) | [Deutsch](README.de.md) | [日本語](README.ja.md) | [Português](README.pt.md) | [Русский](README.ru.md) | [Italiano](README.it.md) | [한국어](README.ko.md) | [Türkçe](README.tr.md) | [Nederlands](README.nl.md) | [ไทย](README.th.md) | [Tiếng Việt](README.vi.md) | [Polski](README.pl.md) | [Українська](README.uk.md) | [Ελληνικά](README.el.md)
+**Languages:** [English](README.md) | [简体中文](README.zh-CN.md) | [繁體中文](README.zh-TW.md) | [हिन्दी](README.hi.md) | [العربية](README.ar.md) | [Français](README.fr.md) | [Español](README.es.md) | [Deutsch](README.de.md) | [日本語](README.ja.md) | [Português](README.pt.md) | [Русский](README.ru.md) | [Italiano](README.it.md) | [한국어](README.ko.md) | [Türkçe](README.tr.md) | [Nederlands](README.nl.md) | [ไทย](README.th.md) | [Tiếng Việt](README.vi.md) | [Polski](README.pl.md) | [Українська](README.uk.md) | [Ελληνικά](README.el.md)
 
 # ChatID Helper Bot  
 Effortlessly retrieve chat IDs with ease and convenience! This Telegram bot, built on Cloudflare Workers, requires no server deployment.  
@@ -23,9 +23,10 @@ Effortlessly retrieve chat IDs with ease and convenience! This Telegram bot, bui
 3. Run `npm run deploy` locally to deploy your worker.  
 
 ### Step 3: Configure Required Environment Variables  
-To run the bot successfully, two environment variables must be set:  
-- **BOT_TOKEN**  
-- **BOT_SECRET_TOKEN**  
+To run the bot successfully, three environment variables must be set:
+- **BOT_TOKEN**
+- **BOT_SECRET_TOKEN**
+- **BOT_LANGUAGE**
 
 Refer to the Cloudflare Workers documentation for [adding environment variables](https://developers.cloudflare.com/workers/configuration/environment-variables/#add-environment-variables-via-the-dashboard).  
 
@@ -35,6 +36,7 @@ Refer to the Cloudflare Workers documentation for [adding environment variables]
    - 1-256 characters in length.  
    - Allowed characters: `A-Z`, `a-z`, `0-9`, `_`, and `-`.  
    - This ensures the bot's security.  
+3. **BOT_LANGUAGE**: Optional language mode. Use `auto` to detect from the user language and name/title characters, or force a supported code such as `zh`, `en`, `ja`, `ko`, `es`, `de`, `fr`, `ru`, `ar`, `fa`, `uk`, `vi`, `tr`, `pt`, `it`, `nl`, `id`, or `ms`.
 
 ### Step 4: Set the Webhook URL  
 Access the following API endpoint in your browser to configure the webhook URL:  

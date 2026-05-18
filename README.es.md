@@ -1,6 +1,6 @@
 ## Léame Traducción
 
-**Idiomas:**[Inglés](README.md)\|[Chino simplificado](README.zh-CN.md)\|[chino tradicional](README.zh-TW.md)\|[hindi](README.hi.md)\|[árabe](README.ar.md)\|[Francés](README.fr.md)\|[Español](README.es.md)\|[Alemán](README.de.md)\|[japonés](README.ja.md)\|[portugués](README.pt.md)\|[ruso](README.ru.md)\|[Italiano](README.it.md)\|[coreano](README.ko.md)\|[turco](README.tr.md)\|[Holandés](README.nl.md)\|[tailandés](README.th.md)\|[vietnamita](README.vi.md)\|[Polaco](README.pl.md)\|[ucranio](README.uk.md)\|[Griego](README.el.md)
+**Idiomas:** [English](README.md) | [简体中文](README.zh-CN.md) | [繁體中文](README.zh-TW.md) | [हिन्दी](README.hi.md) | [العربية](README.ar.md) | [Français](README.fr.md) | [Español](README.es.md) | [Deutsch](README.de.md) | [日本語](README.ja.md) | [Português](README.pt.md) | [Русский](README.ru.md) | [Italiano](README.it.md) | [한국어](README.ko.md) | [Türkçe](README.tr.md) | [Nederlands](README.nl.md) | [ไทย](README.th.md) | [Tiếng Việt](README.vi.md) | [Polski](README.pl.md) | [Українська](README.uk.md) | [Ελληνικά](README.el.md)
 
 # Bot auxiliar ChatID
 
@@ -28,20 +28,23 @@
 
 ### Paso 3: configurar las variables de entorno necesarias
 
-Para ejecutar el bot correctamente, se deben configurar dos variables de entorno:
+Para ejecutar el bot correctamente, se deben configurar tres variables de entorno:
 
 -   **BOT_TOKEN**
--   **te emborraché**
+-   **BOT_SECRET_TOKEN**
+-   **BOT_LANGUAGE**
 
 Consulte la documentación de Cloudflare Workers para[agregando variables de entorno](https://developers.cloudflare.com/workers/configuration/environment-variables/#add-environment-variables-via-the-dashboard).
 
 #### Detalles:
 
 1.  **BOT_TOKEN**: Copie y pegue el token recibido de**@BotFather**en esta variable.
-2.  **te emborraché**: Este es un valor que usted mismo define. Debe cumplir los siguientes criterios:
+2.  **BOT_SECRET_TOKEN**: Este es un valor que usted mismo define. Debe cumplir los siguientes criterios:
     -   1-256 caracteres de longitud.
     -   Caracteres permitidos:`A-Z`,`a-z`,`0-9`,`_`, y`-`.
     -   Esto garantiza la seguridad del bot.
+3.  **BOT_LANGUAGE**: modo de idioma opcional. Use `auto` para detectar según el idioma del usuario y los caracteres del nombre/título, o fuerce un código compatible como `zh`, `en`, `ja`, `ko`, `es`, `de`, `fr`, `ru`, `ar`, `fa`, `uk`, `vi`, `tr`, `pt`, `it`, `nl`, `id` o `ms`.
+
 
 ### Paso 4: configurar la URL del webhook
 

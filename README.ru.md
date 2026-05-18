@@ -1,6 +1,6 @@
 ## README Перевод
 
-**Языки:**[English](README.md)\|[Упрощенный китайский](README.zh-CN.md)\|[Традиционный китайский](README.zh-TW.md)\|[хинди](README.hi.md)\|[араб](README.ar.md)\|[Французский](README.fr.md)\|[испанский](README.es.md)\|[немецкий](README.de.md)\|[японский](README.ja.md)\|[португальский](README.pt.md)\|[Русский](README.ru.md)\|[итальянский](README.it.md)\|[корейский](README.ko.md)\|[турецкий](README.tr.md)\|[Голландский](README.nl.md)\|[тайский](README.th.md)\|[вьетнамский](README.vi.md)\|[Польский](README.pl.md)\|[Украинский](README.uk.md)\|[Греческий](README.el.md)
+**Языки:** [English](README.md) | [简体中文](README.zh-CN.md) | [繁體中文](README.zh-TW.md) | [हिन्दी](README.hi.md) | [العربية](README.ar.md) | [Français](README.fr.md) | [Español](README.es.md) | [Deutsch](README.de.md) | [日本語](README.ja.md) | [Português](README.pt.md) | [Русский](README.ru.md) | [Italiano](README.it.md) | [한국어](README.ko.md) | [Türkçe](README.tr.md) | [Nederlands](README.nl.md) | [ไทย](README.th.md) | [Tiếng Việt](README.vi.md) | [Polski](README.pl.md) | [Українська](README.uk.md) | [Ελληνικά](README.el.md)
 
 # Бот-помощник ChatID
 
@@ -28,20 +28,23 @@
 
 ### Шаг 3. Настройте необходимые переменные среды
 
-Для успешного запуска бота необходимо установить две переменные среды:
+Для успешного запуска бота необходимо установить три переменные среды:
 
--   **БОТ\_ТОКЕН**
--   **я напоил тебя**
+-   **BOT_TOKEN**
+-   **BOT_SECRET_TOKEN**
+-   **BOT_LANGUAGE**
 
 Обратитесь к документации Cloudflare Workers для получения более подробной информации.[добавление переменных среды](https://developers.cloudflare.com/workers/configuration/environment-variables/#add-environment-variables-via-the-dashboard).
 
 #### Подробности:
 
-1.  **БОТ\_ТОКЕН**: скопируйте и вставьте токен, полученный от**@BotFather**в эту переменную.
-2.  **я напоил тебя**: Это ценность, которую вы определяете сами. Он должен соответствовать следующим критериям:
+1.  **BOT_TOKEN**: скопируйте и вставьте токен, полученный от**@BotFather**в эту переменную.
+2.  **BOT_SECRET_TOKEN**: Это ценность, которую вы определяете сами. Он должен соответствовать следующим критериям:
     -   Длина от 1 до 256 символов.
     -   Разрешенные символы:`A-Z`,`a-z`,`0-9`,`_`, и`-`.
     -   Это обеспечивает безопасность бота.
+3.  **BOT_LANGUAGE**: необязательный языковой режим. Используйте `auto`, чтобы определять язык по языку пользователя и символам имени/заголовка, или задайте поддерживаемый код, например `zh`, `en`, `ja`, `ko`, `es`, `de`, `fr`, `ru`, `ar`, `fa`, `uk`, `vi`, `tr`, `pt`, `it`, `nl`, `id` или `ms`.
+
 
 ### Шаг 4. Установите URL-адрес вебхука
 

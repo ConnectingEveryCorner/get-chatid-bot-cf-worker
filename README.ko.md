@@ -1,6 +1,6 @@
 ## 읽어보기 번역
 
-**언어:**[영어](README.md)\|[중국어 간체](README.zh-CN.md)\|[중국어 번체](README.zh-TW.md)\|[힌디 어](README.hi.md)\|[아라비아 사람](README.ar.md)\|[프랑스 국민](README.fr.md)\|[스페인 사람](README.es.md)\|[독일 사람](README.de.md)\|[일본어](README.ja.md)\|[포르투갈 인](README.pt.md)\|[러시아인](README.ru.md)\|[이탈리아 사람](README.it.md)\|[한국어](README.ko.md)\|[터키어](README.tr.md)\|[네덜란드 사람](README.nl.md)\|[태국어](README.th.md)\|[베트남 사람](README.vi.md)\|[광택](README.pl.md)\|[우크라이나 말](README.uk.md)\|[그리스 사람](README.el.md)
+**언어:** [English](README.md) | [简体中文](README.zh-CN.md) | [繁體中文](README.zh-TW.md) | [हिन्दी](README.hi.md) | [العربية](README.ar.md) | [Français](README.fr.md) | [Español](README.es.md) | [Deutsch](README.de.md) | [日本語](README.ja.md) | [Português](README.pt.md) | [Русский](README.ru.md) | [Italiano](README.it.md) | [한국어](README.ko.md) | [Türkçe](README.tr.md) | [Nederlands](README.nl.md) | [ไทย](README.th.md) | [Tiếng Việt](README.vi.md) | [Polski](README.pl.md) | [Українська](README.uk.md) | [Ελληνικά](README.el.md)
 
 # ChatID 도우미 봇
 
@@ -28,20 +28,23 @@
 
 ### 3단계: 필수 환경 변수 구성
 
-봇을 성공적으로 실행하려면 두 가지 환경 변수를 설정해야 합니다.
+봇을 성공적으로 실행하려면 세 가지 환경 변수를 설정해야 합니다.
 
 -   **BOT_TOKEN**
--   **내가 널 취하게 만들었어**
+-   **BOT_SECRET_TOKEN**
+-   **BOT_LANGUAGE**
 
 자세한 내용은 Cloudflare Workers 설명서를 참조하세요.[환경 변수 추가](https://developers.cloudflare.com/workers/configuration/environment-variables/#add-environment-variables-via-the-dashboard).
 
 #### 세부:
 
 1.  **BOT_TOKEN**: 에서 받은 토큰을 복사하여 붙여넣습니다.**@BotFather**이 변수에.
-2.  **내가 널 취하게 만들었어**: 이는 귀하가 직접 정의한 값입니다. 다음 기준을 충족해야 합니다.
+2.  **BOT_SECRET_TOKEN**: 이는 귀하가 직접 정의한 값입니다. 다음 기준을 충족해야 합니다.
     -   길이는 1~256자입니다.
     -   허용되는 문자:`A-Z`,`a-z`,`0-9`,`_`, 그리고`-`.
     -   이는 봇의 보안을 보장합니다.
+3.  **BOT_LANGUAGE**: 선택 사항인 언어 모드입니다. `auto`를 사용하면 사용자 언어와 이름/제목 문자로 자동 감지하며, `zh`, `en`, `ja`, `ko`, `es`, `de`, `fr`, `ru`, `ar`, `fa`, `uk`, `vi`, `tr`, `pt`, `it`, `nl`, `id`, `ms` 같은 지원 코드를 강제로 지정할 수도 있습니다.
+
 
 ### 4단계: 웹훅 URL 설정
 

@@ -1,6 +1,6 @@
 ## Переклад README
 
-**мови:**[англійська](README.md)\|[Спрощена китайська](README.zh-CN.md)\|[Традиційна китайська](README.zh-TW.md)\|[Хінді](README.hi.md)\|[араб](README.ar.md)\|[французька](README.fr.md)\|[Іспанська](README.es.md)\|[Німецький](README.de.md)\|[Японський](README.ja.md)\|[португальська](README.pt.md)\|[Українська](README.ru.md)\|[італійська](README.it.md)\|[корейська](README.ko.md)\|[турецька](README.tr.md)\|[голландська](README.nl.md)\|[тайська](README.th.md)\|[в'єтнамська](README.vi.md)\|[польський](README.pl.md)\|[Українська](README.uk.md)\|[грецька](README.el.md)
+**Мови:** [English](README.md) | [简体中文](README.zh-CN.md) | [繁體中文](README.zh-TW.md) | [हिन्दी](README.hi.md) | [العربية](README.ar.md) | [Français](README.fr.md) | [Español](README.es.md) | [Deutsch](README.de.md) | [日本語](README.ja.md) | [Português](README.pt.md) | [Русский](README.ru.md) | [Italiano](README.it.md) | [한국어](README.ko.md) | [Türkçe](README.tr.md) | [Nederlands](README.nl.md) | [ไทย](README.th.md) | [Tiếng Việt](README.vi.md) | [Polski](README.pl.md) | [Українська](README.uk.md) | [Ελληνικά](README.el.md)
 
 # Бот-помічник ChatID
 
@@ -28,20 +28,22 @@
 
 ### Крок 3: Налаштуйте необхідні змінні середовища
 
-Для успішного запуску бота необхідно встановити дві змінні середовища:
+Для успішного запуску бота необхідно встановити три змінні середовища:
 
 -   **BOT_TOKEN**
--   **Я тебе напив**
+-   **BOT_SECRET_TOKEN**
+-   **BOT_LANGUAGE**
 
 Зверніться до документації Cloudflare Workers для[додавання змінних середовища](https://developers.cloudflare.com/workers/configuration/environment-variables/#add-environment-variables-via-the-dashboard).
 
 #### Подробиці:
 
 1.  **BOT_TOKEN**: Скопіюйте та вставте маркер, отриманий від**@BotFather**у цю змінну.
-2.  **Я тебе напив**: це цінність, яку ви визначаєте самі. Він повинен відповідати наступним критеріям:
+2.  **BOT_SECRET_TOKEN**: це цінність, яку ви визначаєте самі. Він повинен відповідати наступним критеріям:
     -   Довжина 1-256 символів.
     -   Дозволені символи:`A-Z`,`a-z`,`0-9`,`_`, і`-`.
     -   Це гарантує безпеку бота.
+3.  **BOT_LANGUAGE**: необов’язковий мовний режим. Використовуйте `auto`, щоб визначати мову за мовою користувача та символами імені/назви, або примусово задайте підтримуваний код, наприклад `zh`, `en`, `ja`, `ko`, `es`, `de`, `fr`, `ru`, `ar`, `fa`, `uk`, `vi`, `tr`, `pt`, `it`, `nl`, `id` або `ms`.
 
 ### Крок 4. Встановіть URL-адресу Webhook
 

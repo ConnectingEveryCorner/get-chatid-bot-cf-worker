@@ -1,6 +1,6 @@
 ## Traduzione README
 
-**Lingue:**[Inglese](README.md)\|[Cinese semplificato](README.zh-CN.md)\|[Cinese tradizionale](README.zh-TW.md)\|[hindi](README.hi.md)\|[arabo](README.ar.md)\|[francese](README.fr.md)\|[spagnolo](README.es.md)\|[tedesco](README.de.md)\|[giapponese](README.ja.md)\|[portoghese](README.pt.md)\|[russo](README.ru.md)\|[Italiano](README.it.md)\|[coreano](README.ko.md)\|[turco](README.tr.md)\|[Olandese](README.nl.md)\|[tailandese](README.th.md)\|[vietnamita](README.vi.md)\|[Polacco](README.pl.md)\|[ucraino](README.uk.md)\|[greco](README.el.md)
+**Lingue:** [English](README.md) | [简体中文](README.zh-CN.md) | [繁體中文](README.zh-TW.md) | [हिन्दी](README.hi.md) | [العربية](README.ar.md) | [Français](README.fr.md) | [Español](README.es.md) | [Deutsch](README.de.md) | [日本語](README.ja.md) | [Português](README.pt.md) | [Русский](README.ru.md) | [Italiano](README.it.md) | [한국어](README.ko.md) | [Türkçe](README.tr.md) | [Nederlands](README.nl.md) | [ไทย](README.th.md) | [Tiếng Việt](README.vi.md) | [Polski](README.pl.md) | [Українська](README.uk.md) | [Ελληνικά](README.el.md)
 
 # Bot di supporto ChatID
 
@@ -28,20 +28,23 @@ Recupera facilmente gli ID chat con facilità e comodità! Questo bot di Telegra
 
 ### Passaggio 3: configurare le variabili di ambiente richieste
 
-Per eseguire correttamente il bot, è necessario impostare due variabili di ambiente:
+Per eseguire correttamente il bot, è necessario impostare tre variabili di ambiente:
 
 -   **BOT_TOKEN**
--   **Ti ho fatto ubriacare**
+-   **BOT_SECRET_TOKEN**
+-   **BOT_LANGUAGE**
 
 Fare riferimento alla documentazione di Cloudflare Workers per[aggiunta di variabili d'ambiente](https://developers.cloudflare.com/workers/configuration/environment-variables/#add-environment-variables-via-the-dashboard).
 
 #### Dettagli:
 
 1.  **BOT_TOKEN**: copia e incolla il token ricevuto da**@BotFather**in questa variabile.
-2.  **Ti ho fatto ubriacare**: Questo è un valore che definisci tu stesso. Deve soddisfare i seguenti criteri:
+2.  **BOT_SECRET_TOKEN**: Questo è un valore che definisci tu stesso. Deve soddisfare i seguenti criteri:
     -   Lunghezza compresa tra 1 e 256 caratteri.
     -   Caratteri consentiti:`A-Z`,`a-z`,`0-9`,`_`, E`-`.
     -   Ciò garantisce la sicurezza del bot.
+3.  **BOT_LANGUAGE**: modalità lingua opzionale. Usa `auto` per rilevare la lingua dall’utente e dai caratteri di nome/titolo, oppure forza un codice supportato come `zh`, `en`, `ja`, `ko`, `es`, `de`, `fr`, `ru`, `ar`, `fa`, `uk`, `vi`, `tr`, `pt`, `it`, `nl`, `id` o `ms`.
+
 
 ### Passaggio 4: imposta l'URL del webhook
 

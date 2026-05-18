@@ -1,57 +1,61 @@
-/**
- * https://github.com/CECEthanClarke/get-chatid-bot-cf-worker
- */
-import { sendMessage } from './telegram'
+import { getLocale, t } from './locales';
+import { sendMessage } from './telegram';
 
-function getSendText(msg) {
+function getSendText(msg, lang) {
 	let send_text = '';
 	if (msg) {
 		if (msg.message_id) {
-			send_text += `message id: <code>${msg.message_id}</code>\n\n`;
+			send_text += `${t(lang, 'messageId')}: <code>${msg.message_id}</code>\n\n`;
+		}
+		if (msg.message_thread_id) {
+			send_text += `${t(lang, 'messageThreadId')}: <code>${msg.message_thread_id}</code>\n\n`;
 		}
 		if (msg.from) {
 			send_text += `
-🟢 <strong>From</strong>
-	- Title: <code>${msg.from.first_name || ''}${msg.from.last_name || ''}</code>
-	- Chat ID: <code>${msg.from.id}</code>
-	- Username: ${msg.from.username ? '@' + msg.from.username: ''}\n\n`;
+🟢 <strong>${t(lang, 'from')}</strong>
+	- ${t(lang, 'title')}: <code>${msg.from.first_name || ''}${msg.from.last_name || ''}</code>
+	- ${t(lang, 'chatId')}: <code>${msg.from.id}</code>
+	- ${t(lang, 'username')}: ${msg.from.username ? '@' + msg.from.username: ''}\n\n`;
 		}
 		if (msg.chat) {
 			send_text += `
-🔵 <strong>Chat</strong>
-	- Title: <code>${msg.chat.first_name || ''}${msg.chat.last_name || ''}${msg.chat.title || ''}</code>
-	- Chat ID: <code>${msg.chat.id}</code>  
-	- Username: ${msg.chat.username ? '@' + msg.chat.username: ''}\n\n`;
+🔵 <strong>${t(lang, 'chat')}</strong>
+	- ${t(lang, 'title')}: <code>${msg.chat.first_name || ''}${msg.chat.last_name || ''}${msg.chat.title || ''}</code>
+	- ${t(lang, 'chatId')}: <code>${msg.chat.id}</code>  
+	- ${t(lang, 'username')}: ${msg.chat.username ? '@' + msg.chat.username: ''}\n\n`;
 		}
 		if (msg.reply_to_message) {
+			if (msg.reply_to_message.message_thread_id) {
+				send_text += `${t(lang, 'replyToMessageThreadId')}: <code>${msg.reply_to_message.message_thread_id}</code>\n\n`;
+			}
 			if (msg.reply_to_message.from) {
 				send_text += `
-🟢 <strong>Reply To Message From</strong>
-	- Title: <code>${msg.reply_to_message.from.first_name || ''}${msg.reply_to_message.from.last_name || ''}</code>
-	- Chat ID: <code>${msg.reply_to_message.from.id}</code>
-	- Username: ${msg.reply_to_message.from.username ? '@' + msg.reply_to_message.from.username: ''}\n\n`;
+🟢 <strong>${t(lang, 'replyToMessageFrom')}</strong>
+	- ${t(lang, 'title')}: <code>${msg.reply_to_message.from.first_name || ''}${msg.reply_to_message.from.last_name || ''}</code>
+	- ${t(lang, 'chatId')}: <code>${msg.reply_to_message.from.id}</code>
+	- ${t(lang, 'username')}: ${msg.reply_to_message.from.username ? '@' + msg.reply_to_message.from.username: ''}\n\n`;
 			}
 			if (msg.reply_to_message.chat) {
 				send_text += `
-🔵 <strong>Reply To Message Chat</strong>
-	- Title: <code>${msg.reply_to_message.chat.first_name || ''}${msg.reply_to_message.chat.last_name || ''}${msg.reply_to_message.chat.title || ''}</code>
-	- Chat ID: <code>${msg.reply_to_message.chat.id}</code>  
-	- Username: ${msg.reply_to_message.chat.username ? '@' + msg.reply_to_message.chat.username: ''}\n\n`;
+🔵 <strong>${t(lang, 'replyToMessageChat')}</strong>
+	- ${t(lang, 'title')}: <code>${msg.reply_to_message.chat.first_name || ''}${msg.reply_to_message.chat.last_name || ''}${msg.reply_to_message.chat.title || ''}</code>
+	- ${t(lang, 'chatId')}: <code>${msg.reply_to_message.chat.id}</code>  
+	- ${t(lang, 'username')}: ${msg.reply_to_message.chat.username ? '@' + msg.reply_to_message.chat.username: ''}\n\n`;
 			}
 		}
 		if (msg.forward_from) {
 			send_text += `
-🟢 <strong>Forward From</strong>
-	- Title: <code>${msg.forward_from.first_name || ''}${msg.forward_from.last_name || ''}</code>
-	- Chat ID: <code>${msg.forward_from.id}</code>
-	- Username: ${msg.forward_from.username ? '@' + msg.forward_from.username: ''}\n\n`;
+🟢 <strong>${t(lang, 'forwardFrom')}</strong>
+	- ${t(lang, 'title')}: <code>${msg.forward_from.first_name || ''}${msg.forward_from.last_name || ''}</code>
+	- ${t(lang, 'chatId')}: <code>${msg.forward_from.id}</code>
+	- ${t(lang, 'username')}: ${msg.forward_from.username ? '@' + msg.forward_from.username: ''}\n\n`;
 		}
 		if (msg.forward_from_chat) {
 			send_text += `
-🔵 <strong>Forward From Chat</strong>
-	- Title: <code>${msg.forward_from_chat.first_name || ''}${msg.forward_from_chat.last_name || ''}${msg.forward_from_chat.title || ''}</code>
-	- Chat ID: <code>${msg.forward_from_chat.id}</code>  
-	- Username: ${msg.forward_from_chat.username ? '@' + msg.forward_from_chat.username: ''}\n\n`;
+🔵 <strong>${t(lang, 'forwardFromChat')}</strong>
+	- ${t(lang, 'title')}: <code>${msg.forward_from_chat.first_name || ''}${msg.forward_from_chat.last_name || ''}${msg.forward_from_chat.title || ''}</code>
+	- ${t(lang, 'chatId')}: <code>${msg.forward_from_chat.id}</code>  
+	- ${t(lang, 'username')}: ${msg.forward_from_chat.username ? '@' + msg.forward_from_chat.username: ''}\n\n`;
 		}
 	}
 	return send_text;
@@ -64,9 +68,10 @@ async function processUpdate(env, update) {
 			if (msg) {
 				const type = msg.chat.type;
 				const text = msg.text || msg.caption;
+				const lang = getLocale(env, msg);
 				if (text) {
 					if (text.startsWith('/start')) {
-						const send_text = getSendText(msg);
+						const send_text = getSendText(msg, lang);
 						await sendMessage(env.BOT_TOKEN, { 
 							chat_id: msg.chat.id, 
 							text: send_text, 
@@ -76,14 +81,14 @@ async function processUpdate(env, update) {
 								keyboard: [
 									[
 										{
-											text: `Get Bot Chat ID`,
+											text: t(lang, 'getBotChatId'),
 											request_users: {
 												request_id: msg.message_id + 1,
 												user_is_bot: true
 											}
 										},
 										{
-											text: `Get User Chat ID`,
+											text: t(lang, 'getUserChatId'),
 											request_users: {
 												request_id: msg.message_id + 2,
 												user_is_bot: false
@@ -92,14 +97,14 @@ async function processUpdate(env, update) {
 									],
 									[
 										{
-											text: `Get Channel Chat ID`,
+											text: t(lang, 'getChannelChatId'),
 											request_chat: {
 												request_id: msg.message_id + 3,
 												chat_is_channel: true
 											}
 										},
 										{
-											text: `Get Group Chat ID`,
+											text: t(lang, 'getGroupChatId'),
 											request_chat: {
 												request_id: msg.message_id + 4,
 												chat_is_channel: false
@@ -116,14 +121,14 @@ async function processUpdate(env, update) {
 					else if (text.startsWith('/help')) {
 						await sendMessage(env.BOT_TOKEN, { 
 							chat_id: msg.chat.id, 
-							text: `Effortlessly help you get your chat ID — simple and convenient. All the code is open-sourced on GitHub: https://github.com/connectingeverycorner/get-chatid-bot-cf-worker`, 
+							text: t(lang, 'help'), 
 							parse_mode: 'HTML',
 							reply_to_message_id: msg.message_id,
 						});
 					}
 					else {
 						if (type === 'private') {
-							const send_text = getSendText(msg);
+							const send_text = getSendText(msg, lang);
 							await sendMessage(env.BOT_TOKEN, { 
 								chat_id: msg.chat.id, 
 								text: send_text, 
@@ -135,13 +140,13 @@ async function processUpdate(env, update) {
 				} else if (msg.user_shared) {
 					await sendMessage(env.BOT_TOKEN, { 
 						chat_id: msg.chat.id, 
-						text: `Chat ID: <code>${msg.user_shared.user_id}</code>`, 
+						text: `${t(lang, 'chatId')}: <code>${msg.user_shared.user_id}</code>`, 
 						parse_mode: 'HTML'
 					});
 				} else if (msg.chat_shared) {
 					await sendMessage(env.BOT_TOKEN, { 
 						chat_id: msg.chat.id, 
-						text: `Chat ID: <code>${msg.chat_shared.chat_id}</code>`, 
+						text: `${t(lang, 'chatId')}: <code>${msg.chat_shared.chat_id}</code>`, 
 						parse_mode: 'HTML'
 					});
 				}

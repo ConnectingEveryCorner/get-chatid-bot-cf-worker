@@ -1,6 +1,6 @@
 ## README การแปล
 
-**ภาษา:**[ภาษาอังกฤษ](README.md)\|[จีนตัวย่อ](README.zh-CN.md)\|[จีนดั้งเดิม](README.zh-TW.md)\|[ฮินดี](README.hi.md)\|[อาหรับ](README.ar.md)\|[ภาษาฝรั่งเศส](README.fr.md)\|[สเปน](README.es.md)\|[เยอรมัน](README.de.md)\|[ญี่ปุ่น](README.ja.md)\|[โปรตุเกส](README.pt.md)\|[ภาษารัสเซีย](README.ru.md)\|[ภาษาอิตาลี](README.it.md)\|[เกาหลี](README.ko.md)\|[ภาษาตุรกี](README.tr.md)\|[ภาษาดัตช์](README.nl.md)\|[ไทย](README.th.md)\|[Tiếng Việt](README.vi.md)\|[Polski](README.pl.md)\|[ภาษายูเครน](README.uk.md) \| [กรีก](README.el.md)
+**ภาษา:** [English](README.md) | [简体中文](README.zh-CN.md) | [繁體中文](README.zh-TW.md) | [हिन्दी](README.hi.md) | [العربية](README.ar.md) | [Français](README.fr.md) | [Español](README.es.md) | [Deutsch](README.de.md) | [日本語](README.ja.md) | [Português](README.pt.md) | [Русский](README.ru.md) | [Italiano](README.it.md) | [한국어](README.ko.md) | [Türkçe](README.tr.md) | [Nederlands](README.nl.md) | [ไทย](README.th.md) | [Tiếng Việt](README.vi.md) | [Polski](README.pl.md) | [Українська](README.uk.md) | [Ελληνικά](README.el.md)
 
 # บอทผู้ช่วย ChatID
 
@@ -28,22 +28,24 @@
 
 ### ขั้นตอนที่ 3: กำหนดค่าตัวแปรสภาพแวดล้อมที่จำเป็น
 
-หากต้องการรันบอทให้สำเร็จ ต้องตั้งค่าตัวแปรสภาพแวดล้อมสองตัว:
+หากต้องการรันบอทให้สำเร็จ ต้องตั้งค่าตัวแปรสภาพแวดล้อมสามตัว:
 
--   **BOT_TOKEN**  
--   **ฉันทำให้คุณเมา**
+-   **BOT_TOKEN**
+-   **BOT_SECRET_TOKEN**
+-   **BOT_LANGUAGE**
 
-Refer to the Cloudflare Workers documentation for [การเพิ่มตัวแปรสภาพแวดล้อม](https://developers.cloudflare.com/workers/configuration/environment-variables/#add-environment-variables-via-the-dashboard).
+ดูเอกสาร Cloudflare Workers สำหรับ[การเพิ่มตัวแปรสภาพแวดล้อม](https://developers.cloudflare.com/workers/configuration/environment-variables/#add-environment-variables-via-the-dashboard).
 
 #### รายละเอียด:
 
 1.  **BOT_TOKEN**: คัดลอกและวางโทเค็นที่ได้รับจาก**@BotFather**ลงในตัวแปรนี้
-2.  **ฉันทำให้คุณเมา**: นี่คือค่าที่คุณกำหนดด้วยตัวเอง ต้องเป็นไปตามเกณฑ์ต่อไปนี้:
+2.  **BOT_SECRET_TOKEN**: นี่คือค่าที่คุณกำหนดด้วยตัวเอง ต้องเป็นไปตามเกณฑ์ต่อไปนี้:
     -   ความยาว 1-256 ตัวอักษร
     -   อักขระที่อนุญาต:`A-Z`,`a-z`,`0-9`,`_`, และ`-`.
     -   สิ่งนี้ทำให้มั่นใจได้ถึงความปลอดภัยของบอท
+3.  **BOT_LANGUAGE**: โหมดภาษาแบบไม่บังคับ ใช้ `auto` เพื่อตรวจจับจากภาษาผู้ใช้และอักขระในชื่อ/หัวข้อ หรือบังคับใช้รหัสที่รองรับ เช่น `zh`, `en`, `ja`, `ko`, `es`, `de`, `fr`, `ru`, `ar`, `fa`, `uk`, `vi`, `tr`, `pt`, `it`, `nl`, `id` หรือ `ms`.
 
-### Step 4: Set the Webhook URL
+### ขั้นตอนที่ 4: ตั้งค่า Webhook URL
 
 เข้าถึงตำแหน่งข้อมูล API ต่อไปนี้ในเบราว์เซอร์ของคุณเพื่อกำหนดค่า URL ของเว็บฮุค:
 

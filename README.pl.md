@@ -1,6 +1,6 @@
 ## CZYTAJ TŁUMACZENIE
 
-**Języki:**[angielski](README.md)\|[Uproszczony chiński](README.zh-CN.md)\|[Tradycyjny chiński](README.zh-TW.md)\|[hinduski](README.hi.md)\|[Arab](README.ar.md)\|[francuski](README.fr.md)\|[hiszpański](README.es.md)\|[niemiecki](README.de.md)\|[japoński](README.ja.md)\|[portugalski](README.pt.md)\|[rosyjski](README.ru.md)\|[włoski](README.it.md)\|[koreański](README.ko.md)\|[Türkçe](README.tr.md)\|[Holenderski](README.nl.md)\|[tajski](README.th.md)\|[wietnamski](README.vi.md)\|[Polski](README.pl.md)\|[ukraiński](README.uk.md)\|[grecki](README.el.md)
+**Języki:** [English](README.md) | [简体中文](README.zh-CN.md) | [繁體中文](README.zh-TW.md) | [हिन्दी](README.hi.md) | [العربية](README.ar.md) | [Français](README.fr.md) | [Español](README.es.md) | [Deutsch](README.de.md) | [日本語](README.ja.md) | [Português](README.pt.md) | [Русский](README.ru.md) | [Italiano](README.it.md) | [한국어](README.ko.md) | [Türkçe](README.tr.md) | [Nederlands](README.nl.md) | [ไทย](README.th.md) | [Tiếng Việt](README.vi.md) | [Polski](README.pl.md) | [Українська](README.uk.md) | [Ελληνικά](README.el.md)
 
 # ChatID Helper Bot
 
@@ -28,22 +28,25 @@ Bez wysiłku pobieraj identyfikatory czatu z łatwością i wygodą! Ten bot Tel
 
 ### Krok 3: Skonfiguruj wymagane zmienne środowiskowe
 
-Aby pomyślnie uruchomić bota, należy ustawić dwie zmienne środowiskowe:
+Aby bot działał poprawnie, należy ustawić trzy zmienne środowiskowe:
 
 -   **BOT_TOKEN**
--   **Sprawiłem, że jesteś pijany**  
+-   **BOT_SECRET_TOKEN**
+-   **BOT_LANGUAGE**
 
 Zapoznaj się z dokumentacją Cloudflare Workers dla[dodawanie zmiennych środowiskowych](https://developers.cloudflare.com/workers/configuration/environment-variables/#add-environment-variables-via-the-dashboard).
 
 #### Bliższe dane:
 
 1.  **BOT_TOKEN**: Skopiuj i wklej otrzymany token od**@BotFather**w tę zmienną.
-2.  **Sprawiłem, że jesteś pijany**: To jest wartość, którą sam definiujesz. Musi spełniać następujące kryteria:
+2.  **BOT_SECRET_TOKEN**: To jest wartość, którą sam definiujesz. Musi spełniać następujące kryteria:
     -   Długość od 1 do 256 znaków.
     -   Dozwolone znaki:`A-Z`,`a-z`,`0-9`,`_`, I`-`.
     -   This ensures the bot's security.  
+3.  **BOT_LANGUAGE**: opcjonalny tryb języka. Użyj `auto`, aby wykrywać język na podstawie języka użytkownika i znaków w nazwie/tytule, albo wymuś obsługiwany kod, taki jak `zh`, `en`, `ja`, `ko`, `es`, `de`, `fr`, `ru`, `ar`, `fa`, `uk`, `vi`, `tr`, `pt`, `it`, `nl`, `id` lub `ms`.
 
-### Step 4: Set the Webhook URL
+
+### Krok 4: Ustaw adres URL webhooka
 
 Uzyskaj dostęp do następującego punktu końcowego interfejsu API w przeglądarce, aby skonfigurować adres URL elementu webhook:
 

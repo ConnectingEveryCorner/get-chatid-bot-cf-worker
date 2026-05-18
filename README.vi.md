@@ -1,6 +1,6 @@
 ## Bản dịch README
 
-**Ngôn ngữ:**[Tiếng Anh](README.md)\|[Tiếng Trung giản thể](README.zh-CN.md)\|[Tiếng Trung phồn thể](README.zh-TW.md)\|[Tiếng Hindi](README.hi.md)\|[Ả Rập](README.ar.md)\|[người Pháp](README.fr.md)\|[tiếng Tây Ban Nha](README.es.md)\|[tiếng Đức](README.de.md)\|[tiếng Nhật](README.ja.md)\|[tiếng Bồ Đào Nha](README.pt.md)\|[tiếng Nga](README.ru.md)\|[người Ý](README.it.md)\|[hàn quốc](README.ko.md)\|[tiếng Thổ Nhĩ Kỳ](README.tr.md)\|[tiếng Hà Lan](README.nl.md)\|[tiếng Thái](README.th.md)\|[Tiếng Việt](README.vi.md)\|[Đánh bóng](README.pl.md)\|[tiếng Ukraina](README.uk.md)\|[tiếng Hy Lạp](README.el.md)
+**Ngôn ngữ:** [English](README.md) | [简体中文](README.zh-CN.md) | [繁體中文](README.zh-TW.md) | [हिन्दी](README.hi.md) | [العربية](README.ar.md) | [Français](README.fr.md) | [Español](README.es.md) | [Deutsch](README.de.md) | [日本語](README.ja.md) | [Português](README.pt.md) | [Русский](README.ru.md) | [Italiano](README.it.md) | [한국어](README.ko.md) | [Türkçe](README.tr.md) | [Nederlands](README.nl.md) | [ไทย](README.th.md) | [Tiếng Việt](README.vi.md) | [Polski](README.pl.md) | [Українська](README.uk.md) | [Ελληνικά](README.el.md)
 
 # Bot trợ giúp ChatID
 
@@ -12,7 +12,7 @@ Dễ dàng truy xuất ID trò chuyện một cách dễ dàng và thuận tiệ
 
 * * *
 
-## Deployment Guide
+## Hướng dẫn triển khai
 
 ### Bước 1: Tạo Bot Telegram của bạn
 
@@ -28,20 +28,22 @@ Dễ dàng truy xuất ID trò chuyện một cách dễ dàng và thuận tiệ
 
 ### Bước 3: Định cấu hình các biến môi trường cần thiết
 
-Để chạy bot thành công, phải đặt hai biến môi trường:
+Để chạy bot thành công, phải đặt ba biến môi trường:
 
 -   **BOT_TOKEN**
--   **Tôi đã làm bạn say**
+-   **BOT_SECRET_TOKEN**
+-   **BOT_LANGUAGE**
 
 Tham khảo tài liệu Cloudflare Workers để biết[thêm các biến môi trường](https://developers.cloudflare.com/workers/configuration/environment-variables/#add-environment-variables-via-the-dashboard).
 
 #### Chi tiết:
 
 1.  **BOT_TOKEN**: Sao chép và dán mã thông báo nhận được từ**@BotFather**vào biến này.
-2.  **Tôi đã làm bạn say**: Đây là giá trị do bạn tự xác định. Nó phải đáp ứng các tiêu chí sau:
+2.  **BOT_SECRET_TOKEN**: Đây là giá trị do bạn tự xác định. Nó phải đáp ứng các tiêu chí sau:
     -   Độ dài 1-256 ký tự.
     -   Ký tự được phép:`A-Z`,`a-z`,`0-9`,`_`, Và`-`.
     -   Điều này đảm bảo tính bảo mật của bot.
+3.  **BOT_LANGUAGE**: chế độ ngôn ngữ tùy chọn. Dùng `auto` để phát hiện theo ngôn ngữ người dùng và ký tự trong tên/tiêu đề, hoặc ép một mã được hỗ trợ như `zh`, `en`, `ja`, `ko`, `es`, `de`, `fr`, `ru`, `ar`, `fa`, `uk`, `vi`, `tr`, `pt`, `it`, `nl`, `id` hoặc `ms`.
 
 ### Bước 4: Đặt URL Webhook
 

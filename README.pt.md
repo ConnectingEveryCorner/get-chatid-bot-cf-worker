@@ -1,6 +1,6 @@
 ## Tradução LEIA-ME
 
-**Idiomas:**[Inglês](README.md)\|[Chinês simplificado](README.zh-CN.md)\|[Chinês Tradicional](README.zh-TW.md)\|[hindi](README.hi.md)\|[árabe](README.ar.md)\|[Francês](README.fr.md)\|[Espanhol](README.es.md)\|[Alemão](README.de.md)\|[japonês](README.ja.md)\|[Português](README.pt.md)\|[russo](README.ru.md)\|[Italiano](README.it.md)\|[coreano](README.ko.md)\|[turco](README.tr.md)\|[Holandês](README.nl.md)\|[Tailandês](README.th.md)\|[vietnamita](README.vi.md)\|[polonês](README.pl.md)\|[ucraniano](README.uk.md)\|[grego](README.el.md)
+**Idiomas:** [English](README.md) | [简体中文](README.zh-CN.md) | [繁體中文](README.zh-TW.md) | [हिन्दी](README.hi.md) | [العربية](README.ar.md) | [Français](README.fr.md) | [Español](README.es.md) | [Deutsch](README.de.md) | [日本語](README.ja.md) | [Português](README.pt.md) | [Русский](README.ru.md) | [Italiano](README.it.md) | [한국어](README.ko.md) | [Türkçe](README.tr.md) | [Nederlands](README.nl.md) | [ไทย](README.th.md) | [Tiếng Việt](README.vi.md) | [Polski](README.pl.md) | [Українська](README.uk.md) | [Ελληνικά](README.el.md)
 
 # Bot auxiliar ChatID
 
@@ -28,20 +28,23 @@ Recupere facilmente IDs de bate-papo com facilidade e conveniência! Este bot do
 
 ### Etapa 3: configurar variáveis ​​de ambiente necessárias
 
-Para executar o bot com sucesso, duas variáveis ​​de ambiente devem ser definidas:
+Para executar o bot com sucesso, três variáveis de ambiente devem ser definidas:
 
 -   **BOT_TOKEN**
--   **Eu te deixei bêbado**
+-   **BOT_SECRET_TOKEN**
+-   **BOT_LANGUAGE**
 
 Consulte a documentação do Cloudflare Workers para[adicionando variáveis ​​de ambiente](https://developers.cloudflare.com/workers/configuration/environment-variables/#add-environment-variables-via-the-dashboard).
 
 #### Detalhes:
 
 1.  **BOT_TOKEN**: Copie e cole o token recebido de**@BotFather**nesta variável.
-2.  **Eu te deixei bêbado**: Este é um valor que você mesmo define. Deve atender aos seguintes critérios:
+2.  **BOT_SECRET_TOKEN**: Este é um valor que você mesmo define. Deve atender aos seguintes critérios:
     -   1-256 caracteres de comprimento.
     -   Caracteres permitidos:`A-Z`,`a-z`,`0-9`,`_`, e`-`.
     -   Isso garante a segurança do bot.
+3.  **BOT_LANGUAGE**: modo de idioma opcional. Use `auto` para detectar pelo idioma do usuário e pelos caracteres do nome/título, ou force um código compatível como `zh`, `en`, `ja`, `ko`, `es`, `de`, `fr`, `ru`, `ar`, `fa`, `uk`, `vi`, `tr`, `pt`, `it`, `nl`, `id` ou `ms`.
+
 
 ### Etapa 4: definir o URL do webhook
 
