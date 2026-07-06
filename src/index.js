@@ -42,7 +42,10 @@ function getBotForRequest(request, env) {
 		if (!key || key.includes('/')) {
 			return undefined;
 		}
-		return getBotSettings(parseBotsConfig(env.BOTS_CONFIG)[key], key);
+
+		const bots = parseBotsConfig(env.BOTS_CONFIG);
+		const bot = bots[key];
+		return getBotSettings(bot, key);
 	}
 
 	return getBotSettings({
